@@ -4,7 +4,30 @@ Utilities for GTIN (Global Trade Item Number) barcodes.
 
 Based on <https://github.com/tmattsson/gs1utils>.
 
-## Global Trade Item Number (GTIN)
+## Installation
+
+Add the [JitPack](https://jitpack.io/) repository to your build file:
+
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+
+Add the dependency:
+
+```xml
+<dependency>
+    <groupId>com.github.open-fidias</groupId>
+    <artifactId>gtin-utils-java</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+## Usage
 
 GTINs come in 4 lengths, GTIN-14, GTIN-13, GTIN-12 and GTIN-8, also known as UPC-A,
 EAN, UCC-8, UCC-13, ITF-14. The library has methods for identification of each
