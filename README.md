@@ -1,5 +1,7 @@
 # gtin-utils-java
 
+[![Release](https://jitpack.io/v/open-fidias/gtin-utils-java.svg)](https://jitpack.io/#open-fidias/gtin-utils-java)
+
 Utilities for GTIN (Global Trade Item Number) barcodes.
 
 Based on <https://github.com/tmattsson/gs1utils>.
@@ -23,9 +25,11 @@ Add the dependency:
 <dependency>
     <groupId>com.github.open-fidias</groupId>
     <artifactId>gtin-utils-java</artifactId>
-    <version>1.0.0</version>
+    <version>1.x.x</version>
 </dependency>
 ```
+
+Replace `1.x.x` with the latest version.
 
 ## Usage
 
@@ -38,6 +42,8 @@ length and conversion between them.
 * Identification and value extraction from GS1 Sweden variable measure GTINs.
 * Normalization of GS1 Sweden variable measure GTINs to their representative form without weight or price.
 * Normalization of GTINs to their shortest representative form.
+
+The complete API can be found at <https://jitpack.io/com/github/open-fidias/gtin-utils-java/latest/javadoc/>.
 
 ```java
 // Identification and validation
