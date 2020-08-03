@@ -35,8 +35,8 @@ public final class GTIN {
     /**
      * Determines if a string is a valid GTIN without verifying its check digit.
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return {@code true} if is valid, {@code false} otherwise
      */
     public static boolean isGTIN(String gtin) {
         return isDigits(gtin) && (gtin.length() == 14 || gtin.length() == 13 || gtin.length() == 12 || gtin.length() == 8);
@@ -46,8 +46,8 @@ public final class GTIN {
      * Determines if a string is a valid GTIN-14 without verifying its check
      * digit.
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return {@code true} if is a GTIN-14 value, {@code false} otherwise
      */
     public static boolean isGTIN14(String gtin) {
         return isDigits(gtin) && gtin.length() == 14;
@@ -57,8 +57,8 @@ public final class GTIN {
      * Determines if a string is a valid GTIN-13 without verifying its check
      * digit.
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return {@code true} if is a GTIN-13 value, {@code false} otherwise
      */
     public static boolean isGTIN13(String gtin) {
         return isDigits(gtin) && gtin.length() == 13;
@@ -68,8 +68,8 @@ public final class GTIN {
      * Determines if a string is a valid GTIN-12 without verifying its check
      * digit.
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return {@code true} if is a GTIN-12 value, {@code false} otherwise
      */
     public static boolean isGTIN12(String gtin) {
         return isDigits(gtin) && gtin.length() == 12;
@@ -79,8 +79,8 @@ public final class GTIN {
      * Determines if a string is a valid GTIN-8 without verifying its check
      * digit.
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return {@code true} if is a GTIN-8 value, {@code false} otherwise
      */
     public static boolean isGTIN8(String gtin) {
         return isDigits(gtin) && gtin.length() == 8;
@@ -89,8 +89,8 @@ public final class GTIN {
     /**
      * Validates that a string is a GTIN with a correct check digit.
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return {@code true} if is a GTIN value, {@code false} otherwise
      */
     public static boolean isValid(String gtin) {
         return isGTIN(gtin) && CheckDigit.isValid(gtin);
@@ -100,8 +100,8 @@ public final class GTIN {
      * Checks if a string is a correctly formatted GTIN without verifying its
      * check digit.
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return The GTIN value itself
      * @throws NullPointerException if the input string is null
      * @throws IllegalArgumentException if the input string is not a sequence of
      * 14, 13, 12 or 8 digits
@@ -122,8 +122,8 @@ public final class GTIN {
     /**
      * Checks if a string is a GTIN with correct check digit.
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return The GTIN value itself
      * @throws NullPointerException if the input string is null
      * @throws IllegalArgumentException if the input string is not a sequence of
      * 14, 13, 12 or 8 digits or if check digit is not correct
@@ -137,8 +137,8 @@ public final class GTIN {
      * <p>
      * https://en.wikipedia.org/wiki/International_Standard_Serial_Number
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return {@code true} if is a ISSN value, {@code false} otherwise
      */
     public static boolean isISSN(String gtin) {
         if (!isGTIN(gtin)) {
@@ -156,8 +156,8 @@ public final class GTIN {
     /**
      * Determines if a GTIN is an ISBN item.
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return {@code true} if is a ISBN value, {@code false} otherwise
      * @link https://en.wikipedia.org/wiki/International_Standard_Book_Number
      */
     public static boolean isISBN(String gtin) {
@@ -176,8 +176,8 @@ public final class GTIN {
     /**
      * Determines if a GTIN is an ISMN item.
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return {@code true} if is a ISMN value, {@code false} otherwise
      * @link https://en.wikipedia.org/wiki/International_Standard_Music_Number
      */
     public static boolean isISMN(String gtin) {
@@ -196,8 +196,8 @@ public final class GTIN {
     /**
      * Converts a GTIN to its GTIN-14 form.
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return A GTIN-14 value with left pad zeroes
      * @throws IllegalArgumentException if the input string is not a GTIN
      */
     public static String toGTIN14(String gtin) {
@@ -211,8 +211,8 @@ public final class GTIN {
     /**
      * Converts a GTIN to its GTIN-13 form.
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return A GTIN-13 value with left pad zeroes
      * @throws IllegalArgumentException if the input string is not a GTIN or a
      * GTIN-14 without a leading zero
      */
@@ -233,8 +233,8 @@ public final class GTIN {
     /**
      * Converts a GTIN to its GTIN-12 form.
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return A GTIN-12 value with left pad zeroes
      * @throws IllegalArgumentException if the input string is not a GTIN or a
      * GTIN-14 or GTIN-13 without leading zeros
      */
@@ -255,8 +255,8 @@ public final class GTIN {
     /**
      * Converts a GTIN to its GTIN-8 form.
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return A GTIN-8 value with left pad zeroes
      * @throws IllegalArgumentException if the input string is not a GTIN or a
      * GTIN-14, GTIN-13 or GTIN-12 without leading zeros
      */
@@ -278,8 +278,8 @@ public final class GTIN {
      * Determines if a GTIN can be converted to a GTIN-14 or is a GTIN-14
      * already.
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return {@code true} if value is a GTIN-14 convertible, {@code false} otherwise
      */
     public static boolean convertibleToGTIN14(String gtin) {
         return isGTIN(gtin);
@@ -289,8 +289,8 @@ public final class GTIN {
      * Determines if a GTIN can be converted to a GTIN-13 or is a GTIN-13
      * already.
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return {@code true} if value is a GTIN-13 convertible, {@code false} otherwise
      */
     public static boolean convertibleToGTIN13(String gtin) {
         return isGTIN(gtin) && (gtin.length() <= 13 || Internals.startsWithNZeroes(gtin, 1));
@@ -300,8 +300,8 @@ public final class GTIN {
      * Determines if a GTIN can be converted to a GTIN-12 or is a GTIN-12
      * already.
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return {@code true} if value is a GTIN-12 convertible, {@code false} otherwise
      */
     public static boolean convertibleToGTIN12(String gtin) {
         return isGTIN(gtin) && gtin.length() <= 12 || Internals.startsWithNZeroes(gtin, gtin.length() - 12);
@@ -310,8 +310,8 @@ public final class GTIN {
     /**
      * Determines if a GTIN can be converted to a GTIN-8 or is a GTIN-8 already.
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return {@code true} if value is a GTIN-8 convertible, {@code false} otherwise
      */
     public static boolean convertibleToGTIN8(String gtin) {
         return isGTIN(gtin) && gtin.length() == 8 || Internals.startsWithNZeroes(gtin, gtin.length() - 8);
@@ -320,8 +320,8 @@ public final class GTIN {
     /**
      * Shortens a GTIN to the shortest possible length.
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return A shorten version of the GTIN value, if possible
      */
     public static String shorten(String gtin) {
         if (gtin == null) {
@@ -356,8 +356,8 @@ public final class GTIN {
      * removing the weight or price.Does not validate the check digit and only
      * recalculates it if it is a variable measure item.
      *
-     * @param gtin
-     * @return
+     * @param gtin GTIN value
+     * @return A shorten version of the GTIN value, if possible
      */
     public static String normalize(String gtin) {
         if (gtin == null) {
@@ -393,7 +393,7 @@ public final class GTIN {
      * Determines if a GTIN is a variable measure item (contains either weight
      * or price).
      *
-     * @param gtin
+     * @param gtin GTIN value
      * @return
      * @link http://www.gs1.se/sv/vara-standarder/identifiera/Viktvarunummer/
      * @link http://www.gs1.se/globalassets/pub/artiklar_med_varierande_vikt.pdf
@@ -406,7 +406,7 @@ public final class GTIN {
     /**
      * Determines if a GTIN is a variable measure item with price.
      *
-     * @param gtin
+     * @param gtin GTIN value
      * @return
      */
     public static boolean isVariableMeasureItemWithPrice(String gtin) {
@@ -417,7 +417,7 @@ public final class GTIN {
     /**
      * Determines if a GTIN is a variable measure item with weight.
      *
-     * @param gtin
+     * @param gtin GTIN value
      * @return
      */
     public static boolean isVariableMeasureItemWithWeight(String gtin) {
@@ -428,7 +428,7 @@ public final class GTIN {
     /**
      * Extracts the price from a variable measure GTIN.
      *
-     * @param gtin
+     * @param gtin GTIN value
      * @return
      * @throws NullPointerException if the GTIN is null
      * @throws IllegalArgumentException if the GTIN is null or not a variable
@@ -453,7 +453,7 @@ public final class GTIN {
     /**
      * Extracts the weight in grams from a variable measure GTIN.
      *
-     * @param gtin
+     * @param gtin GTIN value
      * @return
      * @throws NullPointerException if the GTIN is null
      * @throws IllegalArgumentException if the GTIN is null or not a variable
@@ -479,7 +479,7 @@ public final class GTIN {
      * Generates a matching GTIN without price or weight for a variable measure
      * GTIN with correct check digit.Preserves the length of the GTIN.
      *
-     * @param gtin
+     * @param gtin GTIN value
      * @return
      * @throws NullPointerException if the GTIN is null
      * @throws IllegalArgumentException if the GTIN is null or not a variable
